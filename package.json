@@ -1,0 +1,45 @@
+{
+	"name": "mern-boilerplate",
+	"version": "1.0.0",
+	"description": "A basic MERN stack, monorepo boilerplate, preconfigured for deployment to Heroku.",
+	"main": "index.js",
+	"engines": {
+		"node": "14.x"
+	},
+	"scripts": {
+		"install-all": "npm install && npm install --prefix client",
+		"client": "npm start --prefix client",
+		"dev": "concurrently \"npm run server\" \"npm run client\"",
+		"heroku-postbuild": "NPM_CONFIG_PRODUCTON=false npm install --prefix client && npm run build --prefix client",
+		"server": "nodemon server/server.js",
+		"start": "node server/server.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/aexcode/mern-boilerplate.git"
+	},
+	"keywords": [
+		"MongoDB",
+		"Express",
+		"React",
+		"Node",
+		"Monorepo",
+		"Boilerplate"
+	],
+	"author": "Ayla Ex <aylaex@protonmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/aexcode/mern-boilerplate/issues"
+	},
+	"homepage": "https://github.com/aexcode/mern-boilerplate#readme",
+	"devDependencies": {
+		"concurrently": "^6.3.0",
+		"nodemon": "^2.0.14"
+	},
+	"dependencies": {
+		"all": "0.0.0",
+		"dotenv": "^10.0.0",
+		"express": "^4.17.1",
+		"mongoose": "^6.0.12"
+	}
+}
